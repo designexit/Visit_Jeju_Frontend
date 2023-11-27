@@ -20,6 +20,7 @@ import com.example.visit_jeju_app.chat.ChatActivity
 import com.example.visit_jeju_app.databinding.ActivityMainBinding
 import com.example.visit_jeju_app.main.adapter.ImageSliderAdapter
 import com.example.visit_jeju_app.main.adapter.RecyclerView
+import com.example.visit_jeju_app.tour.adapter.TourAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
