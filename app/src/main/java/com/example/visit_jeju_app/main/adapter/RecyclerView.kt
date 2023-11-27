@@ -19,26 +19,8 @@ class RecyclerView(val datas : MutableList<String>) : RecyclerView.Adapter<Recyc
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val binding = (holder as MyViewHolder).binding
-        binding.testText.text = datas[position]
+        binding.itemMainTitle.text = datas[position]
     }
 
 }
 
-/*class MyViewHolder(val binding: MainItemBinding) : RecyclerView.ViewHolder(binding.root)
-
-class RecyclerViewAdapter<T>(private val dataList: List<T>) : RecyclerView.Adapter<MyViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = MainItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(binding)
-    }
-
-    override fun getItemCount(): Int {
-        return dataList.size
-    }
-
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = dataList[position].toString() // Modify this based on your data structure
-        holder.binding.testText.text = currentItem
-    }
-}*/

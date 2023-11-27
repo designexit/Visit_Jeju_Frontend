@@ -2,16 +2,17 @@
 <LinearLayout
     android:id="@+id/item_root"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="320dp"
-    android:layout_height="280dp"
+    android:layout_width="300dp"
+    android:layout_height="250dp"
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingTop="12dp"
     >
 
     <ImageView
-        android:layout_width="260dp"
-        android:layout_height="180dp"
+        android:id="@+id/itemMainThumnail"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
         android:src="@drawable/noimg"
         android:background="#ddd"/>
 
@@ -22,18 +23,33 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/testText"
+            android:id="@+id/itemMainTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:text="title"
             style=""/>
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="region1 > region2"
-            style=""/>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/itemMainRegion1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="region1"
+                style=""/>
+            <TextView
+                android:id="@+id/itemMainRegion2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text=" > region2"
+                style=""/>
+        </LinearLayout>
+
 
     </LinearLayout>
 

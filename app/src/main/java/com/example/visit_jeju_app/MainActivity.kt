@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -68,6 +69,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+        val networkService = (applicationContext as MyApplication).networkService
+
+
+
+
+
+
         // 리사이클러 뷰 붙이기
         val datasHotel = mutableListOf<String>()
         for(i in 1..5) {
@@ -91,11 +100,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         // 제주 숙박
-        val horizontalLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val hotelLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         //val linearLayoutManager = LinearLayoutManager(this)
 
         // 리사이클러 뷰 속성 옵션에 출력 옵션 붙이기
-        binding.viewRecyclerHotel.layoutManager = horizontalLayoutManager
+        binding.viewRecyclerHotel.layoutManager = hotelLayoutManager
         // 리사이클러뷰 속성 옵션에 데이터를 붙이기 , 어댑터 를 연결한다.
         val customAdapter1 = RecyclerView(datasHotel)
         binding.viewRecyclerHotel.adapter = customAdapter1
@@ -109,8 +118,8 @@ class MainActivity : AppCompatActivity() {
         // 제주 투어
         val tourLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.viewRecyclerTour.layoutManager = tourLayoutManager
-        val customAdapter3 = RecyclerView(datasTour)
-        binding.viewRecyclerTour.adapter = customAdapter3
+        val TourAdapter = RecyclerView(datasTour)
+        binding.viewRecyclerTour.adapter = TourAdapter
 
         // 제주 축제
         val festivalLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -181,12 +190,20 @@ class MainActivity : AppCompatActivity() {
             R.drawable.jeju_apec04)
     }
 
-
     private fun openWebPage(url: String) {
-        val webpage = Uri.parse(url)
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
+        try {
+            val webpage = Uri.parse(url)
+            val intent = Intent(Intent.ACTION_VIEW, webpage)
+            val packageManager = applicationContext.packageManager
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this@MainActivity, "No app can handle this link", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            // Handle exceptions, like malformed URLs
+            Toast.makeText(this@MainActivity, "Error opening web page", Toast.LENGTH_SHORT).show()
+            e.printStackTrace()
         }
     }
 

@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
+
+
 class ImageSliderAdapter(var mainVisual: ArrayList<Int>) :
     RecyclerView.Adapter<ImageSliderAdapter.PagerViewHolder>() {
 
