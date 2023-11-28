@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
     //액션버튼 토글
     lateinit var toggle: ActionBarDrawerToggle
 
-    //lateinit var viewPager_aespa: ViewPager2
     lateinit var viewPager_mainVisual: ViewPager2
 
 
@@ -71,9 +70,6 @@ class MainActivity : AppCompatActivity() {
 
 
         val networkService = (applicationContext as MyApplication).networkService
-
-
-
 
 
 
