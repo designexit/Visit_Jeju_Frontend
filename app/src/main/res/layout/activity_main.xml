@@ -20,7 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemIconSize="30dp"
+            android:backgroundTint="@color/jejutourBase"/>
         <!-- //Bottom Navigation View -->
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
