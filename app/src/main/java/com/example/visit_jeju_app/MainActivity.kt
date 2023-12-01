@@ -467,11 +467,17 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.youtube -> {
-                    openWebPage("https://www.youtube.com/c/visitjeju")
+                    val webpageUrl = "https://www.youtube.com/c/visitjeju" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 R.id.instagram -> {
-                    openWebPage("https://www.instagram.com/visitjeju.kr")
+                    val webpageUrl = "https://www.instagram.com/visitjeju.kr" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 else -> false
