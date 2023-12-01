@@ -433,15 +433,15 @@ class MainActivity : AppCompatActivity() {
                 currentPage = (currentPage + 1) % NUM_PAGES // 다음 페이지로 이동
                 viewPager_mainVisual.setCurrentItem(currentPage, true) // 다음 페이지로 슬라이드
 
-                handler.postDelayed(this, 3000) // 3초 후에 다음 페이지로 이동
+                handler.postDelayed(this, 4000) // 3초 후에 다음 페이지로 이동
             }
         }
 
         // 자동 스크롤 시작
-        handler.postDelayed(runnable, 3000) // 3초 후에 첫 번째 페이지로 이동
+        handler.postDelayed(runnable, 4000) // 3초 후에 첫 번째 페이지로 이동
 
 
-                // [변경 사항][공통] 현재 위치 위도, 경도 받아오기 == 카테고리끼리 공유 => 수정 필요없음
+        // [변경 사항][공통] 현재 위치 위도, 경도 받아오기 == 카테고리끼리 공유 => 수정 필요없음
         getLocation()
         val pref = getSharedPreferences("latlnt", MODE_PRIVATE)
         val lat : Double? = pref.getString("lat", "Default값")?.toDoubleOrNull()
