@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -484,6 +485,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val communityBanner = findViewById<ImageView>(R.id.communityBanner)
+
+        // ImageView를 클릭했을 때 동작하는 이벤트 리스너 추가
+        communityBanner.setOnClickListener {
+            val intent = Intent(this@MainActivity, CommReadActivity::class.java)
+            this@MainActivity.startActivity(intent)
+        }
+
 
     } //onCreate
 
@@ -647,12 +656,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun openWebPage(url: String) {
-        val webpage = Uri.parse(url)
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
+    // 앱 설치 여부 확인 함수
+    private fun isAppInstalled(packageName: String): Boolean {
+        return try {
+            applicationContext.packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
         }
+    }
+
+    // 웹 페이지 열기 함수
+    private fun openWebPage(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
