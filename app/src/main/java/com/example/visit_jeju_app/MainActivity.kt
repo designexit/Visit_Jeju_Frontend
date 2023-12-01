@@ -427,6 +427,24 @@ class MainActivity : AppCompatActivity() {
         viewPager_mainVisual.adapter = ImageSliderAdapter(getMainvisual()) // 어댑터 생성
         viewPager_mainVisual.orientation = ViewPager2.ORIENTATION_HORIZONTAL // 방향을 가로로
 
+        val NUM_PAGES = 4 // 전체 페이지 수
+        var currentPage = 0
+
+        // 자동 스크롤을 위한 Handler 생성
+                val handler = Handler(Looper.getMainLooper())
+                val runnable = object : Runnable {
+                    override fun run() {
+                        currentPage = (currentPage + 1) % NUM_PAGES // 다음 페이지로 이동
+                        viewPager_mainVisual.setCurrentItem(currentPage, true) // 다음 페이지로 슬라이드
+
+                        handler.postDelayed(this, 3000) // 3초 후에 다음 페이지로 이동
+                    }
+                }
+
+        // 자동 스크롤 시작
+                handler.postDelayed(runnable, 3000) // 3초 후에 첫 번째 페이지로 이동
+
+
         // 일단, 시작시 토스트로 현재 위치 위도, 경도 받아오기 테스트
         getLocation {
 
