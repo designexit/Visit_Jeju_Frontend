@@ -186,16 +186,23 @@ class ResActivity : AppCompatActivity() {
                     true
                 }
                 R.id.youtube -> {
-                    openWebPage("https://www.youtube.com/c/visitjeju")
+                    val webpageUrl = "https://www.youtube.com/c/visitjeju" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 R.id.instagram -> {
-                    openWebPage("https://www.instagram.com/visitjeju.kr")
+                    val webpageUrl = "https://www.instagram.com/visitjeju.kr" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 else -> false
             }
         }
+
     }//oncreate
 
 
@@ -343,6 +350,16 @@ class ResActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacksAndMessages(null) // 핸들러 메시지 제거
+    }
+
+    // 앱 설치 여부 확인 함수
+    private fun isAppInstalled(packageName: String): Boolean {
+        return try {
+            applicationContext.packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
     }
 
     // menu 기능

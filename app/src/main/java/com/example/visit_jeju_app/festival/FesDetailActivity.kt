@@ -1,6 +1,7 @@
 package com.example.visit_jeju_app.festival
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -177,11 +178,17 @@ class FesDetailActivity : AppCompatActivity(), OnMapReadyCallback {
                     true
                 }
                 R.id.youtube -> {
-                    openWebPage("https://www.youtube.com/c/visitjeju")
+                    val webpageUrl = "https://www.youtube.com/c/visitjeju" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 R.id.instagram -> {
-                    openWebPage("https://www.instagram.com/visitjeju.kr")
+                    val webpageUrl = "https://www.instagram.com/visitjeju.kr" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 else -> false
@@ -248,6 +255,15 @@ class FesDetailActivity : AppCompatActivity(), OnMapReadyCallback {
         private val naverMap: NaverMap? = null
     }
 
+    // 앱 설치 여부 확인 함수
+    private fun isAppInstalled(packageName: String): Boolean {
+        return try {
+            applicationContext.packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
+    }
     // menu 기능
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {

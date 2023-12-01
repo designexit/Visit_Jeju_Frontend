@@ -666,11 +666,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 웹 페이지 열기 함수
-    private fun openWebPage(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(intent)
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {

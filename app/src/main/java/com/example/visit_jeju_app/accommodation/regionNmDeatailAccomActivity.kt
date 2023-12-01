@@ -1,6 +1,7 @@
 package com.example.visit_jeju_app.accommodation
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -184,11 +185,17 @@ class regionNmDetailAccomActivity : AppCompatActivity(), OnMapReadyCallback {
                     true
                 }
                 R.id.youtube -> {
-                    openWebPage("https://www.youtube.com/c/visitjeju")
+                    val webpageUrl = "https://www.youtube.com/c/visitjeju" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 R.id.instagram -> {
-                    openWebPage("https://www.instagram.com/visitjeju.kr")
+                    val webpageUrl = "https://www.instagram.com/visitjeju.kr" // 웹 페이지 링크
+
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(webpageUrl))
+                    startActivity(intent)
                     true
                 }
                 else -> false
@@ -237,6 +244,17 @@ class regionNmDetailAccomActivity : AppCompatActivity(), OnMapReadyCallback {
 
         })
 
+    }
+
+
+    // 앱 설치 여부 확인 함수
+    private fun isAppInstalled(packageName: String): Boolean {
+        return try {
+            applicationContext.packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
     }
     // menu 기능
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
