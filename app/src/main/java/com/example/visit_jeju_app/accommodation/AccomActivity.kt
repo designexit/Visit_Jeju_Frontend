@@ -66,16 +66,6 @@ class AccomActivity : AppCompatActivity() {
     //액션버튼 토글
     lateinit var toggle: ActionBarDrawerToggle
 
-    // URL link
-    private fun openWebPage(url: String) {
-        val webpage = Uri.parse(url)
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        }
-    }
-
-
     lateinit var binding: ActivityAccomBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
