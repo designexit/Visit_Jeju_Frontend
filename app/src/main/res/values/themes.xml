@@ -42,6 +42,20 @@
     <style name="buttonStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:background">#f15e4a</item>
+        <item name="android:padding">8dp</item>
+    </style>
+    <style name="buttonStyle2">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">#242c63</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="signTitleStyle">
+        <item name="android:textColor">@color/jejutourPoint</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 

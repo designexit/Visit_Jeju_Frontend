@@ -5,12 +5,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
+    <androidx.cardview.widget.CardView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="75dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:id="@+id/resultUserImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/outline_person_24" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/authMainTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        style="@style/signTitleStyle"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/logoutBtn"
