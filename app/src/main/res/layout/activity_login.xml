@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".login.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="어서오세요.\nJeju Tour입니다."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textSize="28sp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="40dp" />
+
+        <TextView
+            android:text="실시간 위치기반으로 여행에 필요한 \n모든 정보를 제공하고 있습니다. "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="16sp"
+            android:textColor="#888"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
+        android:padding="25dp"
+        android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/loginIdEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:padding="15dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="아이디를 입력하세요"
+                android:fontFamily="@font/KoPubWorld Dotum Medium"/>
+
+        <EditText
+                android:id="@+id/loginPassEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:padding="15dp"
+                android:ems="10"
+                android:hint="비밀번호를 입력하세요"
+                android:inputType="textPassword"
+                android:fontFamily="@font/KoPubWorld Dotum Medium"/>
+        <Button
+                android:id="@+id/signInBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="회원이면 로그인하세요"/>
+
+        <Button
+                android:id="@+id/signUpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="아직 회원이 아니신가요?"
+                style="@style/buttonStyle2"
+                app:layout_constraintTop_toBottomOf="@+id/signInBtn"
+                android:layout_marginTop="8dp" />
+    </LinearLayout>
+</LinearLayout>
