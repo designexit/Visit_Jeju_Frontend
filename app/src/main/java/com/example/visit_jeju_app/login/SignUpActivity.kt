@@ -87,11 +87,9 @@ class SignUpActivity : AppCompatActivity() {
         // 첫 번째 TextView에 밑줄 추가
         val btnUserAgreement = findViewById<TextView>(R.id.btnUserAgreement)
         btnUserAgreement.paintFlags = btnUserAgreement.paintFlags or Paint.UNDERLINE_TEXT_FLAG
-
         // 두 번째 TextView에 밑줄 추가
         val btnPrivacyPolicy = findViewById<TextView>(R.id.btnPrivacyPolicy)
         btnPrivacyPolicy.paintFlags = btnPrivacyPolicy.paintFlags or Paint.UNDERLINE_TEXT_FLAG
-
 
 
 
