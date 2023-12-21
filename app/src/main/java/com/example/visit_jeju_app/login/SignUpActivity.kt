@@ -117,14 +117,6 @@ class SignUpActivity : AppCompatActivity() {
         val btnPrivacyPolicy = findViewById<TextView>(com.example.visit_jeju_app.R.id.btnPrivacyPolicy)
         btnPrivacyPolicy.paintFlags = btnPrivacyPolicy.paintFlags or Paint.UNDERLINE_TEXT_FLAG
 
-        // 닫기 버튼 클릭 이벤트 처리
-        val closeButton = view.findViewById<Button>(R.id.closeBtn)
-        closeButton.setOnClickListener {
-            // 현재 플래그먼트를 닫음
-            activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
-        }
-
-        return view
 
     } //onCreate
 

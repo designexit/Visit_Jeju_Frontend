@@ -5,23 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import com.example.visit_jeju_app.R
 
-/*class PrivacyPolicyFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // 프래그먼트에서 보여줄 레이아웃을 연결합니다. 여기에 자세한 내용을 보여주는 레이아웃을 넣으세요.
-        return inflater.inflate(R.layout.fragment_privacy_policy, container, false)
-    }
-}*/
 
 class PrivacyPolicyFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_privacy_policy, container, false)
+
+        // 닫기 버튼 클릭 이벤트 처리
+        val closeButton = view?.findViewById<Button>(R.id.closeBtn)
+        closeButton?.setOnClickListener {
+            // 현재 플래그먼트를 닫음
+            dismiss()
+        }
+
+        return view
     }
 
     override fun onResume() {
