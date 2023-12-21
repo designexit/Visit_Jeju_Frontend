@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:layout_margin="20dp"
-    android:background="#888"
     android:orientation="vertical"
     tools:context=".login.UserAgreementFragment">
 
@@ -17,12 +16,24 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="이용약관" />
-
+            android:text="ㅇㅣ용약관"
+            android:textSize="20sp" />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="이용약관"/>
+            android:layout_height="match_parent"
+            android:height="200dp"
+            android:text="개인정보취급방침" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:height="200dp"
+            android:text="개인정보취급방침"
+            android:background="#ddd"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:height="200dp"
+            android:text="개인정보취급방침" />
 
     </FrameLayout>
 

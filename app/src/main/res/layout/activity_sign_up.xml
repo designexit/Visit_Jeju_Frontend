@@ -32,7 +32,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingLeft="18dp"
-        android:paddingRight="18dp"
+        android:paddingRight="22dp"
         android:layout_marginTop="30dp">
 
         <LinearLayout
@@ -49,6 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="자세히 보기"
+                android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+                android:textColor="#777"
                 android:gravity="end"
                 android:clickable="true"
                 android:focusable="true"
@@ -69,6 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="자세히 보기"
+                android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+                android:textColor="#777"
                 android:gravity="end"
                 android:clickable="true"
                 android:focusable="true"
