@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:textSize="28sp"
         android:layout_marginTop="60dp"
-        android:text="회원가입"/>
+        android:text="회원가입"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/authMainTextView"
