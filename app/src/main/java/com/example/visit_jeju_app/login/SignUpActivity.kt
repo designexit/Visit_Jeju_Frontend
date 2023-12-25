@@ -1,6 +1,5 @@
 package com.example.visit_jeju_app.login
 
-import android.R
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
@@ -12,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.visit_jeju_app.MyApplication
-//import com.example.visit_jeju_app.R
 import com.example.visit_jeju_app.databinding.ActivitySignUpBinding
 import com.example.visit_jeju_app.login.model.User
 import com.example.visit_jeju_app.retrofit.addUserToMysql
@@ -116,21 +114,12 @@ class SignUpActivity : AppCompatActivity() {
         // 두 번째 TextView에 밑줄 추가
         val btnPrivacyPolicy = findViewById<TextView>(com.example.visit_jeju_app.R.id.btnPrivacyPolicy)
         btnPrivacyPolicy.paintFlags = btnPrivacyPolicy.paintFlags or Paint.UNDERLINE_TEXT_FLAG
-        btnPrivacyPolicy.setOnClickListener {
-            val fragment = PrivacyPolicyFragment()
-            fragment.show(supportFragmentManager, "privacy_policy_fragment_tag")
-        }
 
-        // 자세히 보기 텍스트에 대한 클릭 리스너 설정
-//        btnPrivacyPolicy.setOnClickListener {
-//            val fragment = PrivacyPolicyFragment()
-//            fragment.show(supportFragmentManager, "privacy_policy_fragment_tag")
-//        }
 
     } //onCreate
 
     //이용약관, 개인정보취급방침 프래그먼트 호출
-/*    fun openFragment(view: View) {
+    fun openFragment(view: View) {
         val fragment = when (view.id) {
             com.example.visit_jeju_app.R.id.btnPrivacyPolicy -> PrivacyPolicyFragment()
             com.example.visit_jeju_app.R.id.btnUserAgreement -> UserAgreementFragment()
@@ -138,7 +127,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         fragment.show(supportFragmentManager, "dialog_fragment_tag")
-    }*/
+    }
 
     private fun saveUser(){
         val data = mapOf(
