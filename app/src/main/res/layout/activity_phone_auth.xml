@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.PhoneAuthActivity">
-
-    <Button
-        android:id="@+id/backBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        android:clickable="true"
-        android:text="&lt;"
-        android:background="@color/white"
-        android:textColor="#FF4646"
-        android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <TextView
-        android:id="@+id/constraintLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:textSize="28sp"
+        android:layout_marginTop="60dp"
         android:text="본인인증"
-        android:textFontWeight="@integer/material_motion_duration_short_1"
-        android:textSize="20sp"
-        android:textColor="#FF4646"
-        app:layout_constraintBottom_toTopOf="@id/phoneBox"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/backBtn"
-        android:layout_marginTop="50dp" />
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/authMainTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#555"
+        android:textSize="16sp"
+        android:text="전화번호 인증을 해 주세요."/>
+
     <LinearLayout
         android:id="@+id/phoneBox"
         android:layout_width="350dp"
@@ -50,14 +39,14 @@
             android:hint="전화번호를 입력"
             android:layout_weight="1"
             android:inputType="phone"
-            android:layout_marginTop="20dp"
+
             android:layout_marginEnd="10dp"/>
         <Button
             android:id="@+id/reqAuth"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
             android:textColor="@color/white"
-            android:background="@drawable/button_style2"
             android:text="인증요청"
             />
     </LinearLayout>
@@ -77,17 +66,18 @@
             android:hint="인증번호"
             android:layout_weight="1"
             android:inputType="phone"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"/>
         <Button
             android:id="@+id/checkAuth"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_style2"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
             android:textColor="@color/white"
             android:text="인증번호 확인"
             />
     </LinearLayout>
 
+</LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+

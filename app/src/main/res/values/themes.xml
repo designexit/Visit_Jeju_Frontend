@@ -37,6 +37,10 @@
         <item name="android:textSize">22sp</item>
 <!--        <item name="android:textStyle">bold</item>-->
     </style>
+    
+    <style name="toolbarStyle">
+        <item name="android:textColor">#fff</item>
+    </style>
 
     <!-- Button -->
     <style name="buttonStyle">

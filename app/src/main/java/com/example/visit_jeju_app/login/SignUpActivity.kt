@@ -3,7 +3,6 @@ package com.example.visit_jeju_app.login
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -127,6 +126,23 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         fragment.show(supportFragmentManager, "dialog_fragment_tag")
+
+        // UserAgreementFragment의 CheckBox와 SignUpActivity의 CheckBox 동기화
+        if (fragment is UserAgreementFragment) {
+            fragment.setUserAgreementChangeListener(object : UserAgreementFragment.UserAgreementChangeListener {
+                override fun onAgreementChanged(checked: Boolean) {
+                    binding.checkboxUserAgreement.isChecked = checked
+                }
+            })
+        } else if (fragment is PrivacyPolicyFragment) {
+            fragment.setPrivacyPolicyListener(object  : PrivacyPolicyFragment.PrivacyPolicyListener {
+                override fun onPrivacyPolicyChanged(checked: Boolean) {
+                    binding.checkboxPrivacyPolicy.isChecked = checked
+                }
+            })
+        }
+
+
     }
 
     private fun saveUser(){
