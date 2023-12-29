@@ -177,6 +177,7 @@ class MainActivity : AppCompatActivity() {
         //화면 적용하기
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
         //버튼 클릭스 동기화 : 드로워 열어주기
         toggle.syncState()
 
