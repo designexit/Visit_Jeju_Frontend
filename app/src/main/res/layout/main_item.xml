@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/item_root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="15dp"
+    android:paddingTop="12dp"
+    android:layout_marginBottom="30dp">
+
+    <ImageView
+        android:id="@+id/thumbNailPhoto"
+        android:layout_width="200dp"
+        android:layout_height="148dp"
+        android:src="@drawable/noimg"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/subTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="title" />
+
+        <TextView
+            android:id="@+id/addr2"
+            style=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/map_pin"
+            android:drawablePadding="4dp"
+            android:text="주소"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="전화번호"
+            android:drawableLeft="@drawable/smartphone_device"
+            android:drawablePadding="4dp"
+            style=""/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
