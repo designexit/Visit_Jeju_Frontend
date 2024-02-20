@@ -455,12 +455,18 @@ class MainActivity : AppCompatActivity() {
             override fun run() {
                 currentPage = (currentPage + 1) % NUM_PAGES // 다음 페이지로 이동
                 viewPager_mainVisual.setCurrentItem(currentPage, true) // 다음 페이지로 슬라이드
-
-                handler.postDelayed(this, 3000) // 3초 후에 다음 페이지로 이동
+                handler.postDelayed(this, 4000) // 4초 후에 다음 페이지로 이동
             }
         }
         // 자동 스크롤 시작
-        handler.postDelayed(runnable, 3000) // 3초 후에 첫 번째 페이지로 이동
+        handler.postDelayed(runnable, 4000) // 4초 후에 첫 번째 페이지로 이동
+
+        // Adjust slide speed by modifying the duration of the slide animation
+        viewPager_mainVisual.setPageTransformer { page, position ->
+            val screenWidth = viewPager_mainVisual.width.toFloat()
+            val translationX = position * screenWidth * 5 // Adjust the factor (0.5) to control the speed
+            //page.translationX = translationX
+        }
 
 
     } //Todo onCreate 끝
@@ -468,10 +474,10 @@ class MainActivity : AppCompatActivity() {
     // 뷰 페이저에 들어갈 아이템
     private fun getMainvisual(): ArrayList<Int> {
         return arrayListOf<Int>(
-                R.drawable.jeju_apec02,
-                R.drawable.jeju_apec03,
-                R.drawable.jeju_apec04,
-                R.drawable.jeju_apec01,)
+                R.drawable.visual1,
+                R.drawable.visual2,
+                R.drawable.visual3,
+                R.drawable.visual4,)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
